@@ -1,0 +1,48 @@
+151-15-4757
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+d=pd.read_csv("train.csv")
+
+x1=d['x']
+y1=d['y']
+
+x=np.array(x1)
+y=np.array(y1)
+
+x_bar=x.mean()
+y_bar=y.mean()
+
+xxyy=x*y
+ 
+xy=np.array(xxyy)
+xy_bar=xy.mean()
+ 
+x_bar_2=x_bar**2
+ 
+x_2=(x**2)
+x_2_bar=x_2.mean()
+
+In [3]:.........
+m=((x_bar * y_bar ) - xy_bar ) / (x_bar_2 - x_2_bar)
+ 
+ 
+c=y_bar -(m * x_bar )
+ 
+ 
+print(m)
+print (c)
+l=len(x)
+nan
+nan
+
+In [4]:...
+yyy=[]
+for i in range(l):
+    yyy.append(m*x[i]+c)
+y_y=np.array(yyy)
+
+plt.plot(x,y_y,c='r')
+plt.scatter(x,y)
+plt.show()
